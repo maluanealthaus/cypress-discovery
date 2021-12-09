@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cypress Discovery</title>
+</head>
+<body>
+    <!-- <h1>Hello, <span id="name"></span></h1> -->
+
+    <h1>Are you old enough to get your drive license?</h1>
+
+    <input type="text" name="name" placeholder="Your first name"/>
+    <input type="number" name="age" placeholder="Your age"/>
+    <button type="button" onclick="verifyAge()">Verify age</button>
+
+    
+    <script type="text/javascript">
+        function verifyAge(){
+            var name = document.querySelector('input[name=name]');
+            var age = document.querySelector('input[name=age]');
+
+            if (name.value.length == 0) {
+                alert('Name is required')
+                return
+            } else if (age.value.length == 0){
+                alert('Age is required')
+                return
+            }
+
+            var ageNum = parseInt(age.value)
+
+           if (ageNum >=18 && ageNum <70) {
+               alert('Ok, you can get your license.')
+           } else if (ageNum > 5 && ageNum <18) {
+               alert('Sorry, you may have to ride your bycicle.')
+           } else if(ageNum >= 70){
+               alert('Sorry, you are too old.')
+           } else {
+               alert('You better drink milk.')
+           }
+
+        }
+        // var name = prompt("Enter your name, please");
+        // var recieveAge = prompt("Enter your age, please");
+
+        // var age = parseInt(recieveAge);
+
+        // document.getElementById("name").innerText = name;
+    </script>
+    
+</body>
+</html>
